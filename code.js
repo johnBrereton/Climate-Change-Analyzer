@@ -43,7 +43,7 @@ for (var i=1990; i < 2012; i++) {
 onEvent("searchButton", "click", function() {
     if(validateSearch()) {
         setScreen("infoScreen");
-        updateInfo(getText("countryInput");
+        updateInfo(getText("countryInput"));
     }
 });
 
@@ -76,9 +76,10 @@ function validateSearch() {
 }
 
 // Checks a list for an element and returns weather or not the item is in the list
+// Removes case sensitivity by using to lower case method
 function checkFor(element, list) {
     for(var i=0; i < list.length; i++) {
-        if(list[i] == element) {
+        if(list[i].toLowerCase() == element.toLowerCase()) {
             return true;
         }
     }
@@ -86,12 +87,13 @@ function checkFor(element, list) {
 }
 
 // Ensures that the element is in the list and then find the location of the given element in the given list
+// Removes case sensitivity by using to lower case method
 function find(element, list) {
-    if(checkFor(element, list) = false) {
+    if(!checkFor(element, list)) {
         return false;
     }
     for(var i=0; i < list.length; i++) {
-        if(list[i] == element) {
+        if(list[i].toLowerCase() == element.toLowerCase()) {
             return i;
         }
     }
@@ -99,7 +101,6 @@ function find(element, list) {
 
 // Updates the info screen with the info of the country selected by the user
 function updateInfo(country) {
-    var countryId = find(getText("countryInput"), countryName)
-    var countryId1 = find(getText("countryInput"), countryName1)
-    
+    var countryId = find(getText("countryInput"), countryName);
+    var countryId1 = find(getText("countryInput"), countryName1);
 }
