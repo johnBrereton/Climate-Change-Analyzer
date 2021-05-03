@@ -41,6 +41,8 @@ for (var i=1990; i < 2012; i++) {
 
 onEvent("searchButton", "click", function() {
     if(validateSearch()) {
+        setScreen("infoScreen");
+        updateInfo(getText("countryInput");
     }
 });
 
@@ -55,6 +57,8 @@ onEvent("searchButton", "click", function() {
                                                                                \|_________|
 */
 
+// Validates that the country the user enters is valid
+// Provides the uesr with an error if the input is not valid
 function validateSearch() {
     if(checkFor(getText("countryInput"), countryName1)) {
         setProperty("inputWarning", "text", "");
@@ -70,6 +74,7 @@ function validateSearch() {
     }
 }
 
+// Checks a list for an element and returns weather or not the item is in the list
 function checkFor(element, list) {
     for(var i=0; i < list.length; i++) {
         if(list[i] == element) {
@@ -77,4 +82,20 @@ function checkFor(element, list) {
         }
     }
     return false;
+}
+
+function find(element, list) {
+    if(checkFor(element, list) = false) {
+        return false;
+    }
+    for(var i=0; i < list.length; i++) {
+        if(list[i] == element) {
+            return i;
+        }
+    }
+}
+
+function updateInfo(country) {
+    var countryId
+    var countryId1
 }
