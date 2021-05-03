@@ -1,6 +1,7 @@
 /**
  * @author John Brereton
  * @since 5/1/2021
+ * @source https://github.com/johnBrereton/Country-Info-App
  */
 
 // Create lists to represent datasets
@@ -84,6 +85,7 @@ function checkFor(element, list) {
     return false;
 }
 
+// Ensures that the element is in the list and then find the location of the given element in the given list
 function find(element, list) {
     if(checkFor(element, list) = false) {
         return false;
@@ -95,7 +97,9 @@ function find(element, list) {
     }
 }
 
+// Updates the info screen with the info of the country selected by the user
 function updateInfo(country) {
-    var countryId
-    var countryId1
+    var countryId = find(getText("countryInput"), countryName)
+    var countryId1 = find(getText("countryInput"), countryName1)
+    
 }
