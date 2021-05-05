@@ -47,6 +47,13 @@ onEvent("searchButton", "click", function() {
     }
 });
 
+onEvent("homeScreen", "keydown", function(event) {
+    if(event.key == "enter" && validateSearch()) {
+        setScreen("infoScreen");
+        updateInfo(getText("countryInput"));
+    }
+});
+
 /**
  ________ ___  ___  ________   ________ _________  ___  ________  ________   ________      
 |\  _____\\  \|\  \|\   ___  \|\   ____\\___   ___\\  \|\   __  \|\   ___  \|\   ____\     
