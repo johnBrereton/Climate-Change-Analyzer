@@ -82,8 +82,12 @@ function validateSearch() {
 
 // Updates the info screen with the info of the country selected by the user
 function updateInfo(country) {
-    var countryId = find(getText("countryInput"), countryName);
-    var countryId1 = find(getText("countryInput"), countryName1);
+    var countryId = find(country, countryName);
+    var countryId1 = find(country, countryName1);
+    setProperty("countryOutput", "text", countryName1[countryId1]);
+    setProperty("flagImage", "image", flag[countryId1]);
+    setProperty("populationOutput", "text", population[countryId1]);
+    setProperty("regionOutput", "text", region[countryId1]);
 }
 
 // Checks a list for an element and returns whether or not the item is in the list
