@@ -48,7 +48,7 @@ onEvent("searchButton", "click", function() {
 });
 
 onEvent("homeScreen", "keydown", function(event) {
-    if(event.key == "enter" && validateSearch()) {
+    if(event.key == "Enter" && validateSearch()) {
         setScreen("infoScreen");
         updateInfo(getText("countryInput"));
     }
