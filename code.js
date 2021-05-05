@@ -41,17 +41,11 @@ for (var i=1990; i < 2012; i++) {
 */
 
 onEvent("searchButton", "click", function() {
-    if(validateSearch()) {
-        setScreen("infoScreen");
-        updateInfo(getText("countryInput"));
-    }
+    generateResults();
 });
 
 onEvent("homeScreen", "keydown", function(event) {
-    if(event.key == "Enter" && validateSearch()) {
-        setScreen("infoScreen");
-        updateInfo(getText("countryInput"));
-    }
+    generateResults();
 });
 
 /**
@@ -70,7 +64,11 @@ onEvent("homeScreen", "keydown", function(event) {
 function validateSearch() {
     if(checkFor(getText("countryInput"), countryName1)) {
         setProperty("inputWarning", "text", "");
-        return true;
+        return "country";
+    }
+    else if(checkFor(getText("countryInput"), region)) {
+        setProperty("inputWarning", "text", "");
+        return "region";
     }
     else if(getText("countryInput") == "") {
         setProperty("inputWarning", "text", "This is a required field");
@@ -82,7 +80,13 @@ function validateSearch() {
     }
 }
 
-// Checks a list for an element and returns weather or not the item is in the list
+// Updates the info screen with the info of the country selected by the user
+function updateInfo(country) {
+    var countryId = find(getText("countryInput"), countryName);
+    var countryId1 = find(getText("countryInput"), countryName1);
+}
+
+// Checks a list for an element and returns whether or not the item is in the list
 // Removes case sensitivity by using to lower case method
 function checkFor(element, list) {
     for(var i=0; i < list.length; i++) {
@@ -106,8 +110,15 @@ function find(element, list) {
     }
 }
 
-// Updates the info screen with the info of the country selected by the user
-function updateInfo(country) {
-    var countryId = find(getText("countryInput"), countryName);
-    var countryId1 = find(getText("countryInput"), countryName1);
+// Checks whether the user is looking for a country or region and displays results accordingly
+// Uses validate search function to make sure the user entered value is a country or region
+function generateResults() {
+    if(validateSearch() == "country") {
+        setScreen("infoScreen");
+        updateInfo(getText("countryInput"));
+    }
+    else if(validateSearch() == "region") {
+        setScreen("resultsScreen");
+        updateResults(getText("countryInput"));
+    }
 }
