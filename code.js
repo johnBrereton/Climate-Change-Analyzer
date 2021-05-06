@@ -117,7 +117,7 @@ function updateResults(region) {
         if(filteredCountryList[sortedPopulationIdList[(5*resultsPage)+i]] != undefined) {
             setProperty("result" + i, "hidden", false);
             setProperty("flag" + i, "hidden", false);
-            setProperty("result" + i, "text", filteredCountryList[sortedPopulationIdList[(5*resultsPage)+i]]);
+            setProperty("result" + i, "text", "    " + filteredCountryList[sortedPopulationIdList[(5*resultsPage)+i]]);
             setProperty("flag" + i, "image", filteredFlagList[sortedPopulationIdList[(5*resultsPage)+i]]);
         }
         else {
