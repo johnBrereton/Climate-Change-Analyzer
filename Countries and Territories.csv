@@ -1,4 +1,4 @@
-id,Country Name,Three Leter Country Code,Two Letter Country Code,Region,Income Level,Population,Fertility Rate,Unemployment,GDP Per Capita,Percent Using Internet,Percent Renewable Energy,CO2 Emissions,Flag,National Anthem
+id,Country Name,Three Letter Country Code,Two Letter Country Code,Region,Income Level,Population,Fertility Rate,Unemployment,GDP Per Capita,Percent Using Internet,Percent Renewable Energy,CO2 Emissions,Flag,National Anthem
 1,Afghanistan,AFG,AF,Asia,Low Income,37172386,4.47,11.18,520.9,13.5,18.42,9809.23,https://data.un.org/common/flags/afg_flag.png,http://www.nationalanthems.info/af.mp3
 2,Albania,ALB,AL,Europe,Upper Middle Income,2866376,1.62,13.75,5268.85,71.85,38.62,5716.85,https://data.un.org/common/flags/alb_flag.png,http://www.nationalanthems.info/al.mp3
 3,Algeria,DZA,DZ,Africa,Upper Middle Income,42228429,3.02,13.57,4114.72,49.04,0.06,145400.22,https://data.un.org/common/flags/dza_flag.png,http://www.nationalanthems.info/dz.mp3
