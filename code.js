@@ -5,10 +5,6 @@
  */
 
 // Create lists to represent datasets
-var countryCodeList = getColumn("Country Data", "Country code");
-var countryNameList = getColumn("Country Data", "Country name");
-var seriesCodeList = getColumn("Country Data", "Series code");
-var seriesNameList = getColumn("Country Data", "Series name");
 var countryNameList1 = getColumn("Countries and Territories", "Country Name")
 var countryCodeList1 = getColumn("Countries and Territories", "Three Letter Country Code");
 var twoLetterCodeList = getColumn("Countries and Territories", "Two Letter Country Code");
