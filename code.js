@@ -32,10 +32,13 @@ for (var i=1990; i < 2012; i++) {
 var resultsPage = 0;
 var userInput;
 
+// Runs the generateResults function when the search button is clicked
 onEvent("searchButton", "click", function() {
     generateResults();
 });
 
+// Verifies that the enter button was pressed
+// Runs the generateResults function
 onEvent("homeScreen", "keydown", function(event) {
     if(event.key == "Enter") {
         generateResults();
@@ -101,6 +104,9 @@ function updateInfo(country) {
     setProperty("regionOutput", "text", regionList[countryId1]);
 }
 
+// Updates the results page
+// Uses the findCountriesIn and sortList functions
+// Displays results sorted from greatest to least population
 function updateResults(region) {
     var filteredCountryList = findCountriesIn(region)[0];
     var filteredPopulationList = findCountriesIn(region)[1];
@@ -123,6 +129,8 @@ function updateResults(region) {
     return pages;
 }
 
+// Finds all countries in a given reason
+// Returns a list of countries, a list of populations and a list of flag urls
 function findCountriesIn(region) {
     var sortedCountryList = [];
     var sortedPopulationList = [];
@@ -137,6 +145,10 @@ function findCountriesIn(region) {
     return [sortedCountryList, sortedPopulationList, sortedFlagList];
 }
 
+// Sorts a lits from least to greatest
+// Returns list of sorted values and a list of their origional list ids
+// Uses two for loops to go through every possible combination of two values in the list and see which one is greater
+// If the smaller number is in front of the larger number their positions will be exchanged
 function sortList(list) {
     var sortedList = [];
     var sortedIds = [];
