@@ -5,19 +5,18 @@
  */
 
 // Create lists to represent datasets
-var countryNameList1 = getColumn("Countries and Territories", "Country Name")
-var countryCodeList1 = getColumn("Countries and Territories", "Three Letter Country Code");
+var countryNameList1 = getColumn("Countries and Territories", "Country Name");
+var countryCodeList = getColumn("Countries and Territories", "Three Letter Country Code");
 var twoLetterCodeList = getColumn("Countries and Territories", "Two Letter Country Code");
 var regionList = getColumn("Countries and Territories", "Region");
-var incomeLevelList = getColumn("Countries and Territories", "Income Level");
+var incomeList = getColumn("Countries and Territories", "Income Level");
 var populationList = getColumn("Countries and Territories", "Population");
-var fertilityRateList = getColumn("Countries and Territories", "Population");
 var unemploymentList = getColumn("Countries and Territories", "Unemployment");
 var gdpList = getColumn("Countries and Territories", "GDP Per Capita");
 var percentUsingInternetList = getColumn("Countries and Territories", "Percent Using Internet");
 var renewableEnergyList = getColumn("Countries and Territories", "Percent Renewable Energy");
 var co2List = getColumn("Countries and Territories", "CO2 Emissions");
-var flagList = getColumn("Countries and Territories", "Flag")
+var flagList = getColumn("Countries and Territories", "Flag");
 
 // Create a list of yearly info from the dataset
 /* var yearlyInfo = [];
@@ -72,7 +71,7 @@ onEvent("nextButton", "click", function() {
 // Provides the uesr with an error if the input is not valid
 function validateSearch() {
     userInput = getText("countryInput");
-    if(checkFor(userInput, countryNameList1)) {
+    if(checkFor(userInput, countryNameList1)||checkFor(userInput, countryCodeList)||checkFor(userInput, twoLetterCodeList)) {
         setProperty("inputWarning", "text", "");
         return "country";
     }
@@ -92,18 +91,28 @@ function validateSearch() {
 
 // Updates the info screen with the info of the country selected by the user
 function updateInfo(country) {
-    var countryId = find(country, countryNameList);
-    var countryId1 = find(country, countryNameList1);
-    setProperty("countryOutput", "text", countryNameList1[countryId1]);
-    setProperty("flagImage", "image", flagList[countryId1]);
-    setProperty("populationOutput", "text", populationList[countryId1]);
-    setProperty("regionOutput", "text", regionList[countryId1]);
-    setProperty("CO2Output", "text", co2List[countryId1]);
-    setProperty("GDPOutput", "text", gdpList[countryId1]);
-    setProperty("incomeOutput", "text", incomeList[countryId1]);
-    setProperty("renewableOutput", "text", renewableEnergyList[countryId1]);
-    setProperty("internetOutput", "text", percentUsingInternetList[countryId1]);
-    setProperty("unemploymentOutput", "text", unemploymentList[countryId1]);
+    var countryId;
+    if(typeof(find(country, countryNameList1)) == "number") {
+        countryId = find(country, countryNameList1);
+    }
+    else if(typeof(find(country, countryCodeList)) == "number") {
+        countryId = find(country, countryCodeList);
+    }
+    else if(typeof(find(country, twoLetterCodeList)) == "number") {
+        countryId = find(country, twoLetterCodeList);
+    }
+    console.log(find(country, twoLetterCodeList));
+    console.log(countryId);
+    setProperty("countryOutput", "text", countryNameList1[countryId]);
+    setProperty("flagImage", "image", flagList[countryId]);
+    setProperty("populationOutput", "text", populationList[countryId]);
+    setProperty("regionOutput", "text", regionList[countryId]);
+    setProperty("CO2Output", "text", co2List[countryId]);
+    setProperty("GDPOutput", "text", gdpList[countryId]);
+    setProperty("incomeOutput", "text", incomeList[countryId]);
+    setProperty("renewableOutput", "text", renewableEnergyList[countryId]);
+    setProperty("internetOutput", "text", percentUsingInternetList[countryId]);
+    setProperty("unemploymentOutput", "text", unemploymentList[countryId]);
 }
 
 // Updates the results page
