@@ -98,6 +98,12 @@ function updateInfo(country) {
     setProperty("flagImage", "image", flagList[countryId1]);
     setProperty("populationOutput", "text", populationList[countryId1]);
     setProperty("regionOutput", "text", regionList[countryId1]);
+    setProperty("CO2Output", "text", co2List[countryId1]);
+    setProperty("GDPOutput", "text", gdpList[countryId1]);
+    setProperty("incomeOutput", "text", incomeList[countryId1]);
+    setProperty("renewableOutput", "text", renewableEnergyList[countryId1]);
+    setProperty("internetOutput", "text", percentUsingInternetList[countryId1]);
+    setProperty("unemploymentOutput", "text", unemploymentList[countryId1]);
 }
 
 // Updates the results page
