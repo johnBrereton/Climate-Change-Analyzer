@@ -67,6 +67,36 @@ onEvent("nextButton", "click", function() {
     }
 });
 
+// On event for the first result
+onEvent("result0", "click", function() {
+    updateInfo(getText("result0").replace("    ", ""));
+    setScreen("infoScreen");
+});
+
+// On event for the second result
+onEvent("result1", "click", function() {
+    updateInfo(getText("result1").replace("    ", ""));
+    setScreen("infoScreen");
+});
+
+// On event for the third result
+onEvent("result2", "click", function() {
+    updateInfo(getText("result2").replace("    ", ""));
+    setScreen("infoScreen");
+});
+
+// On event for the fourth result
+onEvent("result3", "click", function() {
+    updateInfo(getText("result3").replace("    ", ""));
+    setScreen("infoScreen");
+});
+
+// On event for the fifth result
+onEvent("result4", "click", function() {
+    updateInfo(getText("result4").replace("    ", ""));
+    setScreen("infoScreen");
+});
+
 // Validates that the country the user enters is valid
 // Provides the uesr with an error if the input is not valid
 function validateSearch() {
