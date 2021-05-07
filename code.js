@@ -18,13 +18,10 @@ var renewableEnergyList = getColumn("Countries and Territories", "Percent Renewa
 var co2List = getColumn("Countries and Territories", "CO2 Emissions");
 var flagList = getColumn("Countries and Territories", "Flag");
 
-// Create a list of yearly info from the dataset
-/* var yearlyInfo = [];
-for (var i=1990; i < 2012; i++) {
-    yearlyInfo[i] = getColumn("Country Data", i.toString());
-} */
-
+// Stores the page the user is currently viewing on the results screen
 var resultsPage = 0;
+
+// Stores what the user inputs on the home screen
 var userInput;
 
 // Runs the generateResults function when the search button is clicked
