@@ -1927,14 +1927,6 @@ div#visualizationResizeBar {
     -ms-transform: scale(0.625);
     transform: scale(0.625); } }
 
-.widgetWidth {
-  width: 600px !important;
-  max-width: 600px !important; }
-
-.widgetHeight {
-  height: 450px !important;
-  max-height: 450px !important; }
-
 #visualizationColumn.wireframeShare {
   max-width: none !important;
   width: 352px;
@@ -1954,6 +1946,14 @@ div#visualizationResizeBar {
 
 #visualizationColumn.chromelessShare #playSpaceHeader, #visualizationColumn.chromelessShare #gameButtons {
   display: none; }
+
+#visualizationColumn.widgetWidth, #visualization.widgetWidth {
+  width: 600px;
+  max-width: 600px; }
+
+#visualizationColumn.widgetHeight, #visualization.widgetHeight {
+  height: 450px;
+  max-height: 450px; }
 
 #divApplab, #designModeViz {
   outline: none;
