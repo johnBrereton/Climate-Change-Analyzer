@@ -101,8 +101,6 @@ function updateInfo(country) {
     else if(typeof(find(country, twoLetterCodeList)) == "number") {
         countryId = find(country, twoLetterCodeList);
     }
-    console.log(find(country, twoLetterCodeList));
-    console.log(countryId);
     setProperty("countryOutput", "text", countryNameList1[countryId]);
     setProperty("flagImage", "image", flagList[countryId]);
     setProperty("populationOutput", "text", populationList[countryId]);
