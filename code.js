@@ -98,7 +98,8 @@ onEvent("result4", "click", function() {
 // Provides the uesr with an error if the input is not valid
 function validateSearch() {
     userInput = getText("countryInput");
-    if(checkFor(userInput, countryNameList1)||checkFor(userInput, countryCodeList)||checkFor(userInput, twoLetterCodeList)) {
+    if(checkFor(userInput, countryNameList1)||checkFor(userInput, countryCodeList)
+    ||checkFor(userInput, twoLetterCodeList)) {
         setProperty("inputWarning", "text", "");
         return "country";
     }
@@ -153,8 +154,9 @@ function updateResults(region) {
         if(filteredCountryList[sortedPopulationIdList[(5*resultsPage)+i]] != undefined) {
             setProperty("result" + i, "hidden", false);
             setProperty("flag" + i, "hidden", false);
-            setProperty("result" + i, "text", "    " + filteredCountryList[sortedPopulationIdList[(5*resultsPage)+i]]);
-            setProperty("flag" + i, "image", filteredFlagList[sortedPopulationIdList[(5*resultsPage)+i]]);
+            setProperty("result" + i, "text", "    "
+                + filteredCountryList[sortedPopulationIdList[(5*resultsPage)+i]]);
+            setProperty("flag"+i, "image", filteredFlagList[sortedPopulationIdList[(5*resultsPage)+i]]);
         }
         else {
             setProperty("result" + i, "hidden", true);
@@ -183,7 +185,7 @@ function findCountriesIn(region) {
 
 // Sorts a lits from least to greatest
 // Returns list of sorted values and a list of their origional list ids
-// Uses two for loops to go through every possible combination of two values in the list and see which one is greater
+// Uses two for loops to go through every possible combination of two values
 // If the smaller number is in front of the larger number their positions will be exchanged
 function sortList(list) {
     var sortedList = [];
@@ -228,7 +230,8 @@ function checkFor(element, list) {
     return false;
 }
 
-// Ensures that the element is in the list and then find the location of the given element in the given list
+// Ensures that the element is in the list
+// Finds the location of the given element in the given list
 // Removes case sensitivity by using to lower case method
 function find(element, list) {
     if(!checkFor(element, list)) {
