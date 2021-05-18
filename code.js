@@ -167,7 +167,7 @@ function updateResults(region) {
     return pages;
 }
 
-// Finds all countries in a given reason
+// Finds all countries in a given region
 // Returns a list of countries, a list of populations and a list of flag urls
 function findCountriesIn(region) {
     var sortedCountryList = [];
